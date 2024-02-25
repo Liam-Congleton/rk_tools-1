@@ -5,13 +5,12 @@ import com.realmkeeper.utils.diceSet;
 public class character extends actorBuilder
 {
     private String ActorId;
-    private String ActorName;
-    private String ActorRace;
-    private String ActorClass;
-    private int ActorLevel;
-    private int ActorXP;
-    private int ActorHP;
-    private int ActorAC;
+    // private String ActorName;
+    // private String ActorRace;
+    // private int ActorLevel;
+    // private int ActorXP;
+    // private int ActorHP;
+    // private int ActorAC;
     protected int[] actorAbilities = new int[6]; // Array to store actor abilities
     protected int actorStr = actorAbilities[0];
     protected int actorDex = actorAbilities[1];
@@ -101,15 +100,14 @@ public class character extends actorBuilder
                 int classId = diceSet.rollD12();        
         
                 System.out.println("GENERATING NEW RANDOM ACTOR_ID: " + actorId);
-                this.actorAbilities = allocateAttributesByPriority(this.actorAbilities, classId); // Barbarian
+                this.actorAbilities = allocateAttributesByPriority(this.actorAbilities, classId); // Random Class
                 this.actorStr = actorAbilities[0];
                 this.actorDex = actorAbilities[1];
                 this.actorCon = actorAbilities[2];
                 this.actorInt = actorAbilities[3];
                 this.actorWis = actorAbilities[4];
                 this.actorCha = actorAbilities[5];
-                this.ActorId = actorId + "01"; // Barbarian
-                debugActor();
+                this.ActorId = actorId + classId;
       } 
       else
       {
@@ -120,6 +118,7 @@ public class character extends actorBuilder
     {
         System.out.println("DEBUG LOG FOR ActorId:" + this.ActorId); //OK
         System.out.println("Actor Attributes:");
+        System.out.println("Class: " + this.actorClass);
         System.out.println("Strength: " + this.actorStr);
         System.out.println("Dexterity: " + this.actorDex);
         System.out.println("Constitution: " + this.actorCon);

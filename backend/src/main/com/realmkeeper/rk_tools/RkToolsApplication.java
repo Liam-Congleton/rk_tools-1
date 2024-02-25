@@ -15,25 +15,15 @@ public class RkToolsApplication
 	public static void main(String[] args) 
 	{
 		//SpringApplication.run(RkToolsApplication.class, args);
-		// characterBuilderOLD demoBuilder = new characterBuilderOLD();
-		// diceSet dice = new diceSet();
-		// //newCharacter.ActorIdPrefix = 1;
-		// demoBuilder.ActorIdPrefix = dice.rollD12();
-		// demoBuilder.newActor();
-
-
-
+		
 		  // Start time
 		  long startTime = System.nanoTime();
 
 		  // Create a new character
-		  //'01R' is the prefix for the character ID
-		  character randomDemo = new character("R");
-		  //randomDemo.debugActor();
+		  character demo = new character("R");
+		  demo.debugActor(); // Debugging
 		  
-		 
-		 
-		 
+		  
 		  // End time
 		  long endTime = System.nanoTime();
   
