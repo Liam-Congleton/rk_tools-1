@@ -17,8 +17,8 @@ public class actorBuilder
                     actorClass = "Barbarian";
                     BarbarianStrategy barbarian = new BarbarianStrategy();
                     this.actorClassStrategy = (ClassStrategy) barbarian; // Typecast to ClassStrategy
-                    attributes = actorClassStrategy.assignAttributes(characterMath.rollAttributes(6)); // Assign attributes
-                    break;
+                    return actorClassStrategy.assignAttributes(characterMath.rollAttributes(6)); // Assign attributes
+                    
                 
             //     case 2: // Bard
             //     actorClass = "Bard";

@@ -10,12 +10,12 @@ public class BarbarianStrategy implements ClassStrategy
     public int [] assignAttributes(int [] rolledAttributes) 
     {
         int[] attributes = new int[6];
-        attributes[0] =+ rolledAttributes[5]; // Strength
-        attributes[1] =+ rolledAttributes[3]; // Dexterity
-        attributes[2] =+ rolledAttributes[4]; // Constitution
-        attributes[3] =+ rolledAttributes[2]; // Wisdom
-        attributes[4] =+ rolledAttributes[0]; // Intelligence
-        attributes[5] =+ rolledAttributes[1]; // Charisma
+        attributes[0] = rolledAttributes[5]; // Strength
+        attributes[1] = rolledAttributes[3]; // Dexterity
+        attributes[2] = rolledAttributes[4]; // Constitution
+        attributes[3] = rolledAttributes[2]; // Wisdom
+        attributes[4] = rolledAttributes[0]; // Intelligence
+        attributes[5] = rolledAttributes[1]; // Charisma
         
         return attributes; // Assign the rolled attributes to the actor
     }
