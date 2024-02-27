@@ -1,13 +1,13 @@
 package com.realmkeeper.characterGeneration.playerClasses;
 
-public class BarbarianStrategy implements ClassStrategy 
+public class BarbarianStrategy extends ClassStrategy
  {
     public int[] actorAbilities = new int[6]; // Array to store actor abilities
     public int actorHealth; // Variable to store actor health
     public String actorClass = "Barbarian"; // Variable to store actor class
     
     @Override
-    public int [] assignAttributes(int [] rolledAttributes) 
+    public int[] assignAttributes(int[] rolledAttributes) 
     {
         int[] attributes = new int[6];
         attributes[0] = rolledAttributes[5]; // Strength
@@ -132,6 +132,11 @@ public class BarbarianStrategy implements ClassStrategy
         {
             System.out.println("Attribute " + i + ": " + this.actorAbilities[i]);
         }
+    }
+    @Override
+    public int getProficiency() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getProficiency'");
     }
     
 }

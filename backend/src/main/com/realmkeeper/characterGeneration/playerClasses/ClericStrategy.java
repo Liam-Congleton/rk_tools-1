@@ -1,6 +1,6 @@
 package com.realmkeeper.characterGeneration.playerClasses;
 
-public class ClericStrategy implements ClassStrategy
+public class ClericStrategy extends ClassStrategy
 {
 
     public int[] actorAbilities = new int[6]; // Array to store actor abilities
@@ -26,13 +26,18 @@ public class ClericStrategy implements ClassStrategy
         // Assign health to the actor
         // Health is calculated as 12 + constitution modifier
         // Constitution modifier is calculated as (constitution - 10) / 2
-        int health = 12 + ((this.actorAbilities[2] - 10) / 2); // TODO: Add a check for negative constitution modifier, and add a minimum health of 1
+        int health = 12 + ((this.actorAbilities[2] - 10) / 2); 
         System.out.println("Health: " + health);
     }
     @Override
     public void debugActor() {
-        // TODO Auto-generated method stub
+        
         throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
+    }
+    @Override
+    public int getProficiency() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getProficiency'");
     }
     
 }

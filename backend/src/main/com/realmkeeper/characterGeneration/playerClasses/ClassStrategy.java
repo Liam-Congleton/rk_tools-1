@@ -1,12 +1,27 @@
 package com.realmkeeper.characterGeneration.playerClasses;
 
-public interface ClassStrategy 
+public class ClassStrategy 
 {
     int[] actorAbilities = null;
-    public int[] assignAttributes(int [] rolledAttributes);
-    public void debugActor();
-    public void assignHealth();
+    public int actorHealth;
+    public String actorClass;
+    
+    public int[] assignAttributes(int [] rolledAttributes)
+    {
+        return rolledAttributes; 
+    }
+    public void debugActor()
+    {
 
+    }
+    public void assignHealth()
+    {
+
+    }
+    public int getProficiency()
+    {
+        return 0;
+    }
     // public int[] assignSkills();
     // public int[] assignSaves();
     // public int[] assignProficiencies();

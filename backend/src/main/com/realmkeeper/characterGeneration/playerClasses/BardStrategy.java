@@ -1,6 +1,6 @@
 package com.realmkeeper.characterGeneration.playerClasses;
 
-public class BardStrategy implements ClassStrategy
+public class BardStrategy extends ClassStrategy
 {
 
     public int[] actorAbilities = new int[6]; // Array to store actor abilities
@@ -11,12 +11,12 @@ public class BardStrategy implements ClassStrategy
     public int [] assignAttributes(int [] rolledAttributes) 
     {
         int[] attributes = new int[6];
-        attributes[0] = rolledAttributes[5]; // Strength
-        attributes[1] = rolledAttributes[3]; // Dexterity
-        attributes[2] = rolledAttributes[4]; // Constitution
+        attributes[0] = rolledAttributes[0]; // Strength
+        attributes[1] = rolledAttributes[4]; // Dexterity
+        attributes[2] = rolledAttributes[3]; // Constitution
         attributes[3] = rolledAttributes[2]; // Wisdom
-        attributes[4] = rolledAttributes[0]; // Intelligence
-        attributes[5] = rolledAttributes[1]; // Charisma
+        attributes[4] = rolledAttributes[1]; // Intelligence
+        attributes[5] = rolledAttributes[5]; // Charisma
         
         return attributes; // Assign the rolled attributes to the actor
     }
@@ -26,13 +26,18 @@ public class BardStrategy implements ClassStrategy
         // Assign health to the actor
         // Health is calculated as 12 + constitution modifier
         // Constitution modifier is calculated as (constitution - 10) / 2
-        int health = 12 + ((this.actorAbilities[2] - 10) / 2); // TODO: Add a check for negative constitution modifier, and add a minimum health of 1
+        int health = 12 + ((this.actorAbilities[2] - 10) / 2); 
         System.out.println("Health: " + health);
     }
     @Override
     public void debugActor() {
-        // TODO Auto-generated method stub
+
         throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
+    }
+    @Override
+    public int getProficiency() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getProficiency'");
     }
     
 }
