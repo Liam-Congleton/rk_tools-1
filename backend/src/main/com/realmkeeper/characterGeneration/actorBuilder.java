@@ -1,6 +1,6 @@
 package com.realmkeeper.characterGeneration;
-
 import com.realmkeeper.characterGeneration.playerClasses.*;
+import com.realmkeeper.utils.CharacterMath;
 import java.util.Arrays;
 import com.realmkeeper.utils.DiceSet;
 
@@ -9,22 +9,8 @@ public class actorBuilder
     public String ActorId; 
     public String actorClass;
     public ClassStrategy actorClassStrategy;
+    private CharacterMath characterMath = new CharacterMath();
     
-    // protected int[] rollAttributes(int amount)
-    // {
-    //     diceSet dice = new diceSet();
-    //     int[] rolls = new int[4]; // Array to store the 4 rolls
-    //     int[] attributesVal = new int[amount]; // Array to store the sum of the highest 3 rolls
-    //     for (int j = 0; j < amount; j++) { // Roll 4d6 and sum the highest 3 rolls
-    //         for (int i = 0; i < 4; i++) {
-    //             rolls[i] = dice.rollD6();
-    //         }
-    //         Arrays.sort(rolls); // Sort the rolls in ascending order
-    //         attributesVal[j] = (rolls[1] + rolls[2] + rolls[3]); // Sum the highest 3 rolls
-    //     }
-    //     Arrays.sort(attributesVal); 
-    //     return (attributesVal); 
-    // }
     protected int[] assignActorClass(int[] attributes, int classId, int actorLevel) //Default to Barbarian lvl 1
     {
         switch (classId) 
@@ -33,7 +19,7 @@ public class actorBuilder
                     actorClass = "Barbarian";
                     BarbarianStrategy barbarian = new BarbarianStrategy();
                     this.actorClassStrategy = (ClassStrategy) barbarian; // Typecast to ClassStrategy
-                    attributes = actorClassStrategy.assignAttributes(rollAttributes(6));
+                    attributes = actorClassStrategy.assignAttributes(characterMath.rollAttributes(6)); // Assign attributes
                     break;
                 
             //     case 2: // Bard
