@@ -1,8 +1,6 @@
 package com.realmkeeper.characterGeneration;
 import com.realmkeeper.characterGeneration.playerClasses.*;
 import com.realmkeeper.utils.CharacterMath;
-import java.util.Arrays;
-import com.realmkeeper.utils.DiceSet;
 
 public class actorBuilder
 {
