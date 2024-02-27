@@ -32,6 +32,7 @@ public class RkToolsApplication
 		  System.out.println("Execution time: " + duration + "ms");
 		  System.exit(0);
 	  }
+	  
 	  private static void printASCIIDragonLogo()
 	  {
 						
@@ -57,8 +58,6 @@ public class RkToolsApplication
 						"";
 		System.out.println(dragonASCII + "\n" + logo);
 	  }
-	  
-
 	}
 
 

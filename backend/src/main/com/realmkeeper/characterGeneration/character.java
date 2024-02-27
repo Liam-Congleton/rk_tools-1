@@ -17,7 +17,7 @@ public class character extends actorBuilder
     // private int ActorXP;
     // private int ActorHP;
     // private int ActorAC;
-    //private int ActorInit;
+    // private int ActorInit;
     // public int ActorSpeed;
     // public int ActorHitDie;
     // public int ActorProficiency;

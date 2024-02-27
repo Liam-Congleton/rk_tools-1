@@ -18,8 +18,6 @@ public class actorBuilder
                     BarbarianStrategy barbarian = new BarbarianStrategy();
                     this.actorClassStrategy = (ClassStrategy) barbarian; // Typecast to ClassStrategy
                     return actorClassStrategy.assignAttributes(characterMath.rollAttributes(6)); // Assign attributes
-                    
-                
             //     case 2: // Bard
             //     actorClass = "Bard";
             //     priority = new int[]{0, 4, 3, 1, 2, 5}; // updated priority order for bard: charisma, dexterity, constitution, wisdom, intelligence, strength
