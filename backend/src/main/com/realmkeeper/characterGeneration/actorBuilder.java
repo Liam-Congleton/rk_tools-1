@@ -18,15 +18,62 @@ public class actorBuilder
                     BarbarianStrategy barbarian = new BarbarianStrategy();
                     this.actorClassStrategy = (ClassStrategy) barbarian; // Typecast to ClassStrategy
                     return actorClassStrategy.assignAttributes(characterMath.rollAttributes(6)); // Assign attributes
-            //     case 2: // Bard
-            //     actorClass = "Bard";
-            //     priority = new int[]{0, 4, 3, 1, 2, 5}; // updated priority order for bard: charisma, dexterity, constitution, wisdom, intelligence, strength
-            //     for (int i = 0; i < 6; i++) 
-            //     {
-            //         attributes[i] = rolledAttributes[priority[i]]; // assign rolled attributes in the priority order (ascending)
-            //         //System.out.println(attributes[i] + " "); // Debugging
-            //     }
-            //     break;
+            case 2: //Barbarian
+                    actorClass = "Bard";
+                    BardStrategy bard = new BardStrategy();
+                    this.actorClassStrategy = (ClassStrategy) bard; // Typecast to ClassStrategy
+                    return actorClassStrategy.assignAttributes(characterMath.rollAttributes(6)); // Assign attributes
+            case 3: //Barbarian
+                    actorClass = "Cleric";
+                    ClericStrategy cleric = new ClericStrategy();
+                    this.actorClassStrategy = (ClassStrategy) cleric; // Typecast to ClassStrategy
+                    return actorClassStrategy.assignAttributes(characterMath.rollAttributes(6)); // Assign attributes                
+            case 4: //Barbarian
+                    actorClass = "Druid";
+                    DruidStrategy Druid = new DruidStrategy();
+                    this.actorClassStrategy = (ClassStrategy) Druid; // Typecast to ClassStrategy
+                    return actorClassStrategy.assignAttributes(characterMath.rollAttributes(6)); // Assign attributes
+            case 5: //Barbarian
+                    actorClass = "Fighter";
+                    FighterStrategy Fighter = new FighterStrategy();
+                    this.actorClassStrategy = (ClassStrategy) Fighter; // Typecast to ClassStrategy
+                    return actorClassStrategy.assignAttributes(characterMath.rollAttributes(6)); // Assign attributes
+            case 6: //Barbarian
+                    actorClass = "Monk";
+                    MonkStrategy Monk = new MonkStrategy();
+                    this.actorClassStrategy = (ClassStrategy) Monk; // Typecast to ClassStrategy
+                    return actorClassStrategy.assignAttributes(characterMath.rollAttributes(6)); // Assign attributes
+            case 7: //Barbarian
+                    actorClass = "Paladin";
+                    PaladinStrategy Paladin = new PaladinStrategy();
+                    this.actorClassStrategy = (ClassStrategy) Paladin; // Typecast to ClassStrategy
+                    return actorClassStrategy.assignAttributes(characterMath.rollAttributes(6)); // Assign attributes
+            case 8: //Barbarian
+                    actorClass = "Ranger";
+                    RangerStrategy Ranger = new RangerStrategy();
+                    this.actorClassStrategy = (ClassStrategy) Ranger; // Typecast to ClassStrategy
+                    return actorClassStrategy.assignAttributes(characterMath.rollAttributes(6)); // Assign attributes
+            case 9: //Barbarian
+                    actorClass = "Rogue";
+                    RogueStrategy Rogue = new RogueStrategy();
+                    this.actorClassStrategy = (ClassStrategy) Rogue; // Typecast to ClassStrategy
+                    return actorClassStrategy.assignAttributes(characterMath.rollAttributes(6)); // Assign attributes
+            case 10: //Barbarian
+                    actorClass = "Sorcerer";
+                    SorcererStrategy Sorcerer = new SorcererStrategy();
+                    this.actorClassStrategy = (ClassStrategy) Sorcerer; // Typecast to ClassStrategy
+                    return actorClassStrategy.assignAttributes(characterMath.rollAttributes(6)); // Assign attributes
+            case 11: //Barbarian
+                    actorClass = "Warlock";
+                    WarlockStrategy Warlock = new WarlockStrategy();
+                    this.actorClassStrategy = (ClassStrategy) Warlock; // Typecast to ClassStrategy
+                    return actorClassStrategy.assignAttributes(characterMath.rollAttributes(6));
+            case 12: //Barbarian
+                    actorClass = "Wizard";
+                    WizardStrategy Wizard = new WizardStrategy();
+                    this.actorClassStrategy = (ClassStrategy) Wizard; // Typecast to ClassStrategy
+                    return actorClassStrategy.assignAttributes(characterMath.rollAttributes(6));
+            // Assign attributes
             // case 3: // Cleric
             //     actorClass = "Cleric";
             //     priority = new int[]{2, 3, 4, 1, 5, 0}; // updated priority order for cleric: wisdom, constitution, dexterity, charisma, intelligence, strength

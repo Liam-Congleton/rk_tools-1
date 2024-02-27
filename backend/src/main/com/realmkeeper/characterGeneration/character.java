@@ -1,4 +1,5 @@
 package com.realmkeeper.characterGeneration;
+import com.realmkeeper.utils.DiceSet;
 
 public class character extends actorBuilder
 {
@@ -82,7 +83,7 @@ public class character extends actorBuilder
 
     public character(String actorId)
     {
-
+        DiceSet dice = new DiceSet();
 
      if(actorId == null)
      {
@@ -96,8 +97,8 @@ public class character extends actorBuilder
      }
      else if (actorId.charAt(actorId.length() - 1) == 'R') // ++ Random Actor Generation ++
       {
-        this.classId = 1; // Default to Barbarian temporarily
-        //this.ClassId = diceSet.rollD12();  
+        //this.classId = 1; // Default to Barbarian temporarily
+        this.classId = dice.rollD12();  
         setCharacterAttributes();
 
                 if(this.classId < 10)  
