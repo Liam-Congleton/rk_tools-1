@@ -1,16 +1,9 @@
 package com.realmkeeper.characterGeneration;
 
-import com.realmkeeper.utils.diceSet;
-
 public class character extends actorBuilder
 {
     private String ActorId;
-    // private String ActorName;
-    // private String ActorRace;
-    // private int ActorLevel;
-    // private int ActorXP;
-    // private int ActorHP;
-    // private int ActorAC;
+    private int classId;
     protected int[] actorAbilities = new int[6]; // Array to store actor abilities
     protected int actorStr = actorAbilities[0];
     protected int actorDex = actorAbilities[1];
@@ -18,6 +11,12 @@ public class character extends actorBuilder
     protected int actorInt = actorAbilities[3];
     protected int actorWis = actorAbilities[4];
     protected int actorCha = actorAbilities[5];
+    // private String ActorName;
+    // private String ActorRace;
+    // private int ActorLevel;
+    // private int ActorXP;
+    // private int ActorHP;
+    // private int ActorAC;
     //private int ActorInit;
     // public int ActorSpeed;
     // public int ActorHitDie;
@@ -83,7 +82,7 @@ public class character extends actorBuilder
 
     public character(String actorId)
     {
-        diceSet diceSet = new diceSet();
+
 
      if(actorId == null)
      {
@@ -95,24 +94,37 @@ public class character extends actorBuilder
         System.out.println("ActorId cannot be empty");
         System.exit(0);
      }
-     else if (actorId.charAt(actorId.length() - 1) == 'R')
+     else if (actorId.charAt(actorId.length() - 1) == 'R') // ++ Random Actor Generation ++
       {
-                int classId = diceSet.rollD12();        
-        
-                System.out.println("GENERATING NEW RANDOM ACTOR_ID: " + actorId);
-                this.actorAbilities = allocateAttributesByPriority(this.actorAbilities, classId); // Random Class
-                this.actorStr = actorAbilities[0];
-                this.actorDex = actorAbilities[1];
-                this.actorCon = actorAbilities[2];
-                this.actorInt = actorAbilities[3];
-                this.actorWis = actorAbilities[4];
-                this.actorCha = actorAbilities[5];
-                this.ActorId = actorId + classId;
+        this.classId = 1; // Default to Barbarian temporarily
+        //this.ClassId = diceSet.rollD12();  
+        setCharacterAttributes();
+
+                if(this.classId < 10)  
+                {
+                    this.ActorId = actorId + "0" + classId + "c";    
+                }
+                else
+                     {
+                    this.ActorId = actorId + classId + "c";
+                }
       } 
       else
       {
-          System.out.println("ActorId must start with 'R' for random actor generation. This branch is for deliberate actor generation.");
+          System.out.println("[PLACEHOLDER] ActorId must end with 'R' for random actor generation. This branch is for deliberate actor generation.");
       }
+     }
+     private void setCharacterAttributes() 
+     {
+        System.out.println("GENERATING NEW RANDOM ACTOR_ID: " + this.classId);
+        this.actorAbilities = assignActorClass(this.actorAbilities, this.classId, 1); // Random level 1 class
+        this.actorStr = actorAbilities[0];
+        this.actorDex = actorAbilities[1];
+        this.actorCon = actorAbilities[2];
+        this.actorInt = actorAbilities[3];
+        this.actorWis = actorAbilities[4];
+        this.actorCha = actorAbilities[5];
+        
      }
     public void debugActor()
     {

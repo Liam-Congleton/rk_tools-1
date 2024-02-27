@@ -1,6 +1,6 @@
 package com.realmkeeper.utils;
 
-public class diceSet 
+public class DiceSet 
 {
     public int rollD4()
     {
