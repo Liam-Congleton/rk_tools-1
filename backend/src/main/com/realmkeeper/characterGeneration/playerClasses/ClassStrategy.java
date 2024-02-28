@@ -5,7 +5,6 @@ public class ClassStrategy
     public int[] actorAbilities;
     public int actorHealth;
     public String ActorId;
-    
     private String actorClass;
      
 
@@ -17,17 +16,20 @@ public class ClassStrategy
     {
 
     }
-    public void assignHealth()
+    public int assignHealth()
     {
-
+        int hitDie = -1000000;
+        
+        return actorHealth = (hitDie + getProficiency(2, this.actorAbilities));
     }
     public String getClassName()
     {
         return this.actorClass;
     }
-    public int getProficiency(int attributeSelect, int[] stats)
+    public int getProficiency(int attributeSelect, int[] attributes)
     {
-        return ((stats[attributeSelect] - 10) / 2);
+        this.actorAbilities = attributes;
+        return ((this.actorAbilities[attributeSelect] - 10) / 2);
     }
     // public int[] assignSkills();
     // public int[] assignSaves();

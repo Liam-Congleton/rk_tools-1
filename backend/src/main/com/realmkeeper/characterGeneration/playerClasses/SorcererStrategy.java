@@ -25,9 +25,10 @@ public class SorcererStrategy extends ClassStrategy
         return this.actorClass;
     }
     @Override
-    public void assignHealth()
+    public int assignHealth()
     {
-        actorHealth = 12 + getProficiency(2, this.actorAbilities);
+        int hitDie = 6;
+        return this.actorHealth = (hitDie + getProficiency(2, this.actorAbilities));
     }
     @Override
     public void debugActor() {

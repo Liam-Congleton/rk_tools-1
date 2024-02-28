@@ -12,6 +12,8 @@ public class character extends actorBuilder
     protected int actorInt = actorAbilities[3];
     protected int actorWis = actorAbilities[4];
     protected int actorCha = actorAbilities[5];
+    private int actorHealth;
+    //ClassStrategy x;
     // private String ActorName;
     // private String ActorRace;
     // private int ActorLevel;
@@ -97,8 +99,8 @@ public class character extends actorBuilder
      }
      else if (actorId.charAt(actorId.length() - 1) == 'R') // ++ Random Actor Generation ++
       {
-        this.classId = 1; // Default to Barbarian temporarily
-        //this.classId = dice.rollD12();  
+        //this.classId = 1; // Default to Barbarian temporarily
+        this.classId = dice.rollD12();  
         setCharacterAttributes();
 
                 if(this.classId < 10)  
@@ -118,20 +120,21 @@ public class character extends actorBuilder
      private void setCharacterAttributes() 
      {
         System.out.println("GENERATING NEW RANDOM ACTOR_ID: " + this.classId);
-        this.actorAbilities = assignActorClass(this.actorAbilities, this.classId, 1); // Random level 1 class
-        this.actorStr = actorAbilities[0];
-        this.actorDex = actorAbilities[1];
-        this.actorCon = actorAbilities[2];
-        this.actorInt = actorAbilities[3];
-        this.actorWis = actorAbilities[4];
-        this.actorCha = actorAbilities[5];
-        
+        actorAbilities = assignActorClass(actorAbilities, this.classId, 1); // Random level 1 class
+        actorStr = actorAbilities[0];
+        actorDex = actorAbilities[1];
+        actorCon = actorAbilities[2];
+        actorInt = actorAbilities[3];
+        actorWis = actorAbilities[4];
+        actorCha = actorAbilities[5];
+        actorHealth =  actorClassStrategy.assignHealth();
      }
     public void debugActor()
     {
         System.out.println("DEBUG LOG FOR ActorId:" + this.ActorId); //OK
         System.out.println("Actor Attributes:");
-        System.out.println("Class: " + this.actorClass);
+        System.out.println("Class: " + actorClass);
+        System.out.println("Health: " + this.actorHealth);
         System.out.println("Strength: " + this.actorStr);
         System.out.println("Dexterity: " + this.actorDex);
         System.out.println("Constitution: " + this.actorCon);

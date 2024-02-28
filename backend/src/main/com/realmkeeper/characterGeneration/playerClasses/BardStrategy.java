@@ -5,7 +5,7 @@ public class BardStrategy extends ClassStrategy
 
     public int[] actorAbilities = new int[6]; // Array to store actor abilities
     public int actorHealth; // Variable to store actor health
-    public String actorClass = "Bard"; // Variable to store actor class
+    private String actorClass = "Bards"; // Variable to store actor class
     
     @Override
     public int [] assignAttributes(int [] rolledAttributes) 
@@ -25,11 +25,9 @@ public class BardStrategy extends ClassStrategy
         return this.actorClass;
     }
     @Override
-    public void assignHealth()
+    public int assignHealth()
     {
-        // Assign health to the actor
-        // Health is calculated as 12 + constitution modifier
-        // Constitution modifier is calculated as (constitution - 10) / 2
-        actorHealth = 12 + getProficiency(2, actorAbilities);
+        int hitDie = 8;
+        return this.actorHealth = (hitDie + getProficiency(2, this.actorAbilities));
     }
 }

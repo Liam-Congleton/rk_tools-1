@@ -16,8 +16,7 @@ public class BarbarianStrategy extends ClassStrategy
         actorAbilities[3] = rolledAttributes[2]; // Wisdom
         actorAbilities[4] = rolledAttributes[0]; // Intelligence
         actorAbilities[5] = rolledAttributes[1]; // Charisma
-        
-        return actorAbilities; // Assign the rolled attributes to the actor
+        return this.actorAbilities; // Assign the rolled attributes to the actor
     }
     @Override
     public String getClassName()
@@ -25,12 +24,10 @@ public class BarbarianStrategy extends ClassStrategy
         return this.actorClass;
     }
     @Override
-    public void assignHealth()
+    public int assignHealth()
     {
-        // Assign health to the actor
-        // Health is calculated as 12 + constitution modifier
-        // Constitution modifier is calculated as (constitution - 10) / 2
-        actorHealth = 12 + getProficiency(2, this.actorAbilities);
+        int hitDie = 12;
+        return this.actorHealth = (hitDie + getProficiency(2, this.actorAbilities));
     }
     
     // @Override

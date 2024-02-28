@@ -20,9 +20,10 @@ public class WarlockStrategy extends ClassStrategy
         return actorAbilities; // Assign the rolled attributes to the actor
     }
     @Override
-    public void assignHealth()
+    public int assignHealth()
     {
-        actorHealth = 12 + getProficiency(2, this.actorAbilities);
+        int hitDie = 8;
+        return this.actorHealth = (hitDie + getProficiency(2, this.actorAbilities));
     }
     @Override
     public String getClassName()

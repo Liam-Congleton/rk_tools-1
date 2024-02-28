@@ -20,12 +20,10 @@ public class MonkStrategy extends ClassStrategy
         return actorAbilities; // Assign the rolled attributes to the actor
     }
     @Override
-    public void assignHealth()
+    public int assignHealth()
     {
-        // Assign health to the actor
-        // Health is calculated as 12 + constitution modifier
-        // Constitution modifier is calculated as (constitution - 10) / 2
-        actorHealth = 12 + getProficiency(2, this.actorAbilities);
+        int hitDie = 8;
+        return this.actorHealth = (hitDie + getProficiency(2, this.actorAbilities));
     }
     @Override
     public String getClassName()
