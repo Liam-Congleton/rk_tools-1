@@ -2,7 +2,7 @@ package com.realmkeeper.characterGeneration.playerClasses;
 
 public class ClassStrategy 
 {
-    int[] actorAbilities = null;
+    public int[] actorAbilities = null;
     public int actorHealth;
     public String ActorId;
     

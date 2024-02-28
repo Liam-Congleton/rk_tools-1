@@ -9,15 +9,15 @@ public class BarbarianStrategy extends ClassStrategy
     @Override
     public int[] assignAttributes(int[] rolledAttributes) 
     {
-        int[] attributes = new int[6];
-        attributes[0] = rolledAttributes[5]; // Strength
-        attributes[1] = rolledAttributes[3]; // Dexterity
-        attributes[2] = rolledAttributes[4]; // Constitution
-        attributes[3] = rolledAttributes[2]; // Wisdom
-        attributes[4] = rolledAttributes[0]; // Intelligence
-        attributes[5] = rolledAttributes[1]; // Charisma
         
-        return attributes; // Assign the rolled attributes to the actor
+        actorAbilities[0] = rolledAttributes[5]; // Strength
+        actorAbilities[1] = rolledAttributes[3]; // Dexterity
+        actorAbilities[2] = rolledAttributes[4]; // Constitution
+        actorAbilities[3] = rolledAttributes[2]; // Wisdom
+        actorAbilities[4] = rolledAttributes[0]; // Intelligence
+        actorAbilities[5] = rolledAttributes[1]; // Charisma
+        
+        return actorAbilities; // Assign the rolled attributes to the actor
     }
     @Override
     public String getClassName()
