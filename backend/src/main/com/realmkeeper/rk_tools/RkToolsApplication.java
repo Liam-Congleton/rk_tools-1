@@ -54,7 +54,7 @@ public class RkToolsApplication
 						"		    j;;    /  ,' ,-//.    ,---.      ,\r\n" + //
 						"		    \\;'   /  ,' /  _  \\  /  _  \\   ,'/\r\n" + //
 						"		          \\   `'  / \\  `'  / \\  `.' /\r\n" + //
-						"		           `.___,'   `.__,'   `.__,'  \r\n" + //
+						"		           `.___,'   `.__,'   `.__,'  \r\n" + "Liam Congleton" + // 
 						"";
 		System.out.println(dragonASCII + "\n" + logo);
 	  }

@@ -6,6 +6,22 @@ public class FighterStrategy extends ClassStrategy
     public int[] actorAbilities = new int[6]; // Array to store actor abilities
     public int actorHealth; // Variable to store actor health
     public String actorClass = "Fighter"; // Variable to store actor class
+    @Override
+    protected double[] getCumulativeProbabilities() // TODO - update weights
+    {
+        return new double[] 
+        {
+            0.3, // LAWFUL_GOOD 
+            0.45, // NEUTRAL_GOOD
+            0.55, // CHAOTIC_GOOD
+            0.65, // LAWFUL_NEUTRAL
+            0.75, // TRUE_NEUTRAL
+            0.85, // CHAOTIC_NEUTRAL
+            0.90, // LAWFUL_EVIL
+            0.95, // NEUTRAL_EVIL
+            1.00  // CHAOTIC_EVIL
+        };
+    }    
     
     @Override
     public int [] assignAttributes(int [] rolledAttributes) 

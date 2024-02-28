@@ -6,6 +6,20 @@ public class PaladinStrategy extends ClassStrategy
     public int[] actorAbilities = new int[6]; // Array to store actor abilities
     public int actorHealth; // Variable to store actor health
     public String actorClass = "Paladin"; // Variable to store actor class
+    @Override
+    protected double[] getCumulativeProbabilities()
+    {
+        return new double[] 
+        {0.6,   // LAWFUL_GOOD
+         0.7,   // NEUTRAL_GOOD
+         0.75,  // CHAOTIC_GOOD
+         0.8,   // LAWFUL_NEUTRAL
+         0.85,  // TRUE_NEUTRAL
+         0.9,   // CHAOTIC_NEUTRAL
+         0.93,  // LAWFUL_EVIL
+         0.96,  // NEUTRAL_EVIL
+         1.0};  // CHAOTIC_EVIL
+    }    
     
     @Override
     public int [] assignAttributes(int [] rolledAttributes) 

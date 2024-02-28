@@ -8,6 +8,22 @@ public class BardStrategy extends ClassStrategy
     private String actorClass = "Bards"; // Variable to store actor class
     
     @Override
+    protected double[] getCumulativeProbabilities() // TODO - update weights
+    {
+        return new double[] 
+        {
+            0.1, // LAWFUL_GOOD
+            0.25, // NEUTRAL_GOOD
+            0.45, // CHAOTIC_GOOD
+            0.55, // LAWFUL_NEUTRAL
+            0.65, // TRUE_NEUTRAL
+            0.80, // CHAOTIC_NEUTRAL
+            0.85, // LAWFUL_EVIL
+            0.92, // NEUTRAL_EVIL
+            1.00  // CHAOTIC_EVIL
+        };
+    }    
+    @Override
     public int [] assignAttributes(int [] rolledAttributes) 
     {
         this.actorAbilities[0] = rolledAttributes[0]; // Strength

@@ -13,7 +13,6 @@ public class character extends actorBuilder
     protected int actorWis = actorAbilities[4];
     protected int actorCha = actorAbilities[5];
     private int actorHealth;
-    //ClassStrategy x;
     // private String ActorName;
     // private String ActorRace;
     // private int ActorLevel;
@@ -119,42 +118,37 @@ public class character extends actorBuilder
      }
     private void setCharacterAttributes() 
     {
-        System.out.println("GENERATING NEW RANDOM ACTOR_ID: " + this.classId);
+        //System.out.println("GENERATING NEW RANDOM ACTOR_ID: " + this.classId);  // Debugging
         actorAbilities = assignActorClass(actorAbilities, this.classId, 1); // Random level 1 class
-        
-        // Ensure actor abilities are not below 8
-        for (int i = 0; i < actorAbilities.length; i++) 
+
+        for (int i = 0; i < actorAbilities.length; i++)  // Ensure no ability is below 8
         {
             if (actorAbilities[i] < 8) 
             {
                 actorAbilities[i] = 8;
             }
         }
-        actorStr = actorAbilities[0];
+        actorStr = actorAbilities[0]; 
         actorDex = actorAbilities[1];
         actorCon = actorAbilities[2];
         actorInt = actorAbilities[3];
         actorWis = actorAbilities[4];
         actorCha = actorAbilities[5];
-        actorHealth = actorClassStrategy.assignHealth();
+        actorHealth = actorClassStrategy.assignHealth(); // Assign health
     }
     public void debugActor()
     {
         System.out.println("DEBUG LOG FOR ActorId:" + this.ActorId); //OK
-        System.out.println("Actor Attributes:");
-        System.out.println("Class: " + this.actorClass);
-        System.out.println("Health: " + this.actorHealth);
-        System.out.println("Strength: " + this.actorStr);
-        System.out.println("Dexterity: " + this.actorDex);
-        System.out.println("Constitution: " + this.actorCon);
-        System.out.println("Intelligence: " + this.actorInt);
-        System.out.println("Wisdom: " + this.actorWis);
-        System.out.println("Charisma: " + this.actorCha);
+        System.out.println("Actor Attributes:"); //OK
+        System.out.println("Class: " + this.actorClassName); //OK
+        System.out.println("Health: " + this.actorHealth); //OK
+        System.out.println("Strength: " + this.actorStr); //OK
+        System.out.println("Dexterity: " + this.actorDex); //OK
+        System.out.println("Constitution: " + this.actorCon); //OK
+        System.out.println("Intelligence: " + this.actorInt); //OK
+        System.out.println("Wisdom: " + this.actorWis); //OK
+        System.out.println("Charisma: " + this.actorCha); //OK
+        actorClassStrategy.assignAlignment(); //OK
 
     }
-    // private void showActorSimple()
-    // {
-    //     //print all actor attributes
-        
-    // }
 }

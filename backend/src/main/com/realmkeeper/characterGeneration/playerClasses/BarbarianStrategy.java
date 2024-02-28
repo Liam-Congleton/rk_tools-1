@@ -7,6 +7,22 @@ public class BarbarianStrategy extends ClassStrategy
     public String actorClass = "Barbarian"; // Variable to store actor class
     
     @Override
+    protected double[] getCumulativeProbabilities() 
+    {
+        return new double[] 
+        {
+            0.05, // LAWFUL_GOOD 
+            0.1,  // NEUTRAL_GOOD
+            0.15, // CHAOTIC_GOOD
+            0.2,  // LAWFUL_NEUTRAL
+            0.25, // TRUE_NEUTRAL
+            0.75, // CHAOTIC_NEUTRAL
+            0.8,  // LAWFUL_EVIL
+            0.9,  // NEUTRAL_EVIL
+            1.0   // CHAOTIC_EVIL
+        };
+    }
+    @Override
     public int[] assignAttributes(int[] rolledAttributes) 
     {
         

@@ -1,4 +1,5 @@
 package com.realmkeeper.characterGeneration.playerClasses;
+import java.util.Random;
 
 public class ClassStrategy 
 {
@@ -6,7 +7,8 @@ public class ClassStrategy
     public int actorHealth;
     public String ActorId;
     private String actorClass;
-     
+    private static final Random RANDOM = new Random(); // Cache the random number generator
+    private static final Alignment[] ALIGNMENTS = Alignment.values(); // Cache the values array
 
     public int[] assignAttributes(int [] rolledAttributes)
     {
@@ -18,7 +20,7 @@ public class ClassStrategy
     }
     public int assignHealth()
     {
-        int hitDie = -1000000;
+        int hitDie = -1000000; // Placeholder
         
         return actorHealth = (hitDie + getProficiency(2, this.actorAbilities));
     }
@@ -31,6 +33,46 @@ public class ClassStrategy
         this.actorAbilities = attributes;
         return ((this.actorAbilities[attributeSelect] - 10) / 2);
     }
+
+    enum Alignment  // Enum for character alignments
+    {
+        LAWFUL_GOOD, NEUTRAL_GOOD, CHAOTIC_GOOD,
+        LAWFUL_NEUTRAL, TRUE_NEUTRAL, CHAOTIC_NEUTRAL,
+        LAWFUL_EVIL, NEUTRAL_EVIL, CHAOTIC_EVIL;
+    }
+    protected double[] getCumulativeProbabilities() 
+    {
+        return new double[] {
+            0.3, // LAWFUL_GOOD 
+            0.45, // NEUTRAL_GOOD
+            0.55, // CHAOTIC_GOOD
+            0.65, // LAWFUL_NEUTRAL
+            0.75, // TRUE_NEUTRAL
+            0.85, // CHAOTIC_NEUTRAL
+            0.90, // LAWFUL_EVIL
+            0.95, // NEUTRAL_EVIL
+            1.00  // CHAOTIC_EVIL
+        };
+    }
+    public Alignment getRandomWeightedAlignment() {
+        double[] cumulativeProbabilities = getCumulativeProbabilities(); // Get the cumulative probabilities
+        double randomValue = RANDOM.nextDouble(); // Random value between 0.0 and 1.0
+
+        for (int i = 0; i < cumulativeProbabilities.length; i++) {
+            if (randomValue < cumulativeProbabilities[i]) {
+                return ALIGNMENTS[i]; // Return the alignment at the current index
+            }
+        }
+
+        return ALIGNMENTS[ALIGNMENTS.length - 1]; // Fallback, should not happen
+    }
+    public void assignAlignment()  // Assign a random alignment to the character  
+    {
+        Alignment randomWeightedAlignment = getRandomWeightedAlignment();
+        System.out.println("The character's alignment is: " + randomWeightedAlignment);
+    }
+}
+
     // public int[] assignSkills();
     // public int[] assignSaves();
     // public int[] assignProficiencies();
@@ -50,4 +92,3 @@ public class ClassStrategy
     // public int[] assignImage();
     // public int[] assignPortrait();
     // public int[] assignToken();
-}
