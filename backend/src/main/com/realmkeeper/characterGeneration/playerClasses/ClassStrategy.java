@@ -2,7 +2,7 @@ package com.realmkeeper.characterGeneration.playerClasses;
 
 public class ClassStrategy 
 {
-    public int[] actorAbilities = null;
+    public int[] actorAbilities;
     public int actorHealth;
     public String ActorId;
     
@@ -25,9 +25,9 @@ public class ClassStrategy
     {
         return this.actorClass;
     }
-    public int getProficiency(int attributeSelect)
+    public int getProficiency(int attributeSelect, int[] stats)
     {
-        return ((this.actorAbilities[attributeSelect] - 10) / 2);
+        return ((stats[attributeSelect] - 10) / 2);
     }
     // public int[] assignSkills();
     // public int[] assignSaves();

@@ -25,8 +25,7 @@ public class MonkStrategy extends ClassStrategy
         // Assign health to the actor
         // Health is calculated as 12 + constitution modifier
         // Constitution modifier is calculated as (constitution - 10) / 2
-        int health = 12 + ((this.actorAbilities[2] - 10) / 2);
-        System.out.println("Health: " + health);
+        actorHealth = 12 + getProficiency(2, this.actorAbilities);
     }
     @Override
     public String getClassName()

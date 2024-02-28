@@ -30,8 +30,7 @@ public class BarbarianStrategy extends ClassStrategy
         // Assign health to the actor
         // Health is calculated as 12 + constitution modifier
         // Constitution modifier is calculated as (constitution - 10) / 2
-        int health = 12 + ((this.actorAbilities[2] - 10) / 2); // TODO: Add a check for negative constitution modifier, and add a minimum health of 1
-        System.out.println("Health: " + health);
+        actorHealth = 12 + getProficiency(2, this.actorAbilities);
     }
     
     // @Override
