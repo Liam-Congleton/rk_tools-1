@@ -11,7 +11,7 @@ public class DruidStrategy extends ClassStrategy
     {
         return new double[] 
         {
-            0.3, // LAWFUL_GOOD 
+            0.1, // LAWFUL_GOOD 
             0.45, // NEUTRAL_GOOD
             0.55, // CHAOTIC_GOOD
             0.65, // LAWFUL_NEUTRAL
@@ -45,10 +45,5 @@ public class DruidStrategy extends ClassStrategy
     public String getClassName()
     {
         return this.actorClass;
-    }
-    @Override
-    public void debugActor() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
     }
 }

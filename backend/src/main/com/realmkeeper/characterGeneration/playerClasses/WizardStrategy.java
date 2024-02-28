@@ -22,7 +22,6 @@ public class WizardStrategy extends ClassStrategy
             1.00  // CHAOTIC_EVIL
         };
     }    
-    
     @Override
     public int [] assignAttributes(int [] rolledAttributes) 
     {
@@ -46,8 +45,5 @@ public class WizardStrategy extends ClassStrategy
     {
         return this.actorClass;
     }
-    @Override
-    public void debugActor() {
-        throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
-    } 
+    
 }

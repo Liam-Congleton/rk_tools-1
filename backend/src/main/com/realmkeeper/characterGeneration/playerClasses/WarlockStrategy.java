@@ -46,11 +46,4 @@ public class WarlockStrategy extends ClassStrategy
     {
         return this.actorClass;
     }
-
-    @Override
-    public void debugActor() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
-    }
-  
 }

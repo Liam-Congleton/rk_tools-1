@@ -1,4 +1,5 @@
 package com.realmkeeper.characterGeneration.playerClasses;
+import java.util.HashMap;
 import java.util.Random;
 
 public class ClassStrategy 
@@ -13,10 +14,6 @@ public class ClassStrategy
     public int[] assignAttributes(int [] rolledAttributes)
     {
         return rolledAttributes; 
-    }
-    public void debugActor()
-    {
-
     }
     public int assignHealth()
     {
@@ -33,8 +30,7 @@ public class ClassStrategy
         this.actorAbilities = attributes;
         return ((this.actorAbilities[attributeSelect] - 10) / 2);
     }
-
-    enum Alignment  // Enum for character alignments
+    public enum Alignment  // Enum for character alignments
     {
         LAWFUL_GOOD, NEUTRAL_GOOD, CHAOTIC_GOOD,
         LAWFUL_NEUTRAL, TRUE_NEUTRAL, CHAOTIC_NEUTRAL,
@@ -68,15 +64,27 @@ public class ClassStrategy
     }
     public void assignAlignment()  // Assign a random alignment to the character  
     {
-        Alignment randomWeightedAlignment = getRandomWeightedAlignment();
+        Alignment randomWeightedAlignment = getRandomWeightedAlignment(); // Random weights overidden by subclass
         System.out.println("The character's alignment is: " + randomWeightedAlignment);
+    }
+    public HashMap<String, String> assignEquipment() 
+    {
+        HashMap<String, String> equipment = new HashMap<>();
+        // Add equipment items to the HashMap
+        equipment.put("Weapon", "Sword");
+        equipment.put("Armor", "Shield");
+        equipment.put("Accessory", "Ring");
+        return equipment;
+    }
+    public void debugActor()
+    {
+
     }
 }
 
     // public int[] assignSkills();
     // public int[] assignSaves();
     // public int[] assignProficiencies();
-    // public int[] assignEquipment();
     // public int[] assignSpells();
     // public int[] assignFeats();
     // public int[] assignTraits();

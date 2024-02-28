@@ -46,9 +46,4 @@ public class ClericStrategy extends ClassStrategy
     {
         return this.actorClass;
     }
-    @Override
-    public void debugActor() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
-    }
 }

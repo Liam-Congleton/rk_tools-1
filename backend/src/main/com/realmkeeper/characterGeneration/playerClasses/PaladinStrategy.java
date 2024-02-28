@@ -44,9 +44,4 @@ public class PaladinStrategy extends ClassStrategy
         int hitDie = 12;
         return this.actorHealth = (hitDie + getProficiency(2, this.actorAbilities));
     }
-    @Override
-    public void debugActor() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
-    }
 }
