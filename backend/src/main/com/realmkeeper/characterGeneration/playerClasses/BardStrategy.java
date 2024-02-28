@@ -21,6 +21,11 @@ public class BardStrategy extends ClassStrategy
         return attributes; // Assign the rolled attributes to the actor
     }
     @Override
+    public String getClassName()
+    {
+        return this.actorClass;
+    }
+    @Override
     public void assignHealth()
     {
         // Assign health to the actor
@@ -29,15 +34,4 @@ public class BardStrategy extends ClassStrategy
         int health = 12 + ((this.actorAbilities[2] - 10) / 2); 
         System.out.println("Health: " + health);
     }
-    @Override
-    public void debugActor() {
-
-        throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
-    }
-    @Override
-    public int getProficiency() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getProficiency'");
-    }
-    
 }

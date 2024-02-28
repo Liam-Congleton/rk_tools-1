@@ -20,6 +20,11 @@ public class BarbarianStrategy extends ClassStrategy
         return attributes; // Assign the rolled attributes to the actor
     }
     @Override
+    public String getClassName()
+    {
+        return this.actorClass;
+    }
+    @Override
     public void assignHealth()
     {
         // Assign health to the actor
@@ -133,10 +138,4 @@ public class BarbarianStrategy extends ClassStrategy
             System.out.println("Attribute " + i + ": " + this.actorAbilities[i]);
         }
     }
-    @Override
-    public int getProficiency() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getProficiency'");
-    }
-    
 }

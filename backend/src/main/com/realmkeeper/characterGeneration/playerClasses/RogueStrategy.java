@@ -21,6 +21,11 @@ public class RogueStrategy extends ClassStrategy
         return attributes; // Assign the rolled attributes to the actor
     }
     @Override
+    public String getClassName()
+    {
+        return this.actorClass;
+    }
+    @Override
     public void assignHealth()
     {
         // Assign health to the actor
@@ -33,10 +38,4 @@ public class RogueStrategy extends ClassStrategy
     public void debugActor() {
         throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
     }
-    @Override
-    public int getProficiency() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getProficiency'");
-    }
-    
 }

@@ -30,14 +30,15 @@ public class WarlockStrategy extends ClassStrategy
         System.out.println("Health: " + health);
     }
     @Override
+    public String getClassName()
+    {
+        return this.actorClass;
+    }
+
+    @Override
     public void debugActor() {
         
         throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
     }
-    @Override
-    public int getProficiency() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getProficiency'");
-    }
-      
+  
 }

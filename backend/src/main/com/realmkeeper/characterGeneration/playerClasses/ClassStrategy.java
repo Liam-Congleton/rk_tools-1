@@ -4,8 +4,11 @@ public class ClassStrategy
 {
     int[] actorAbilities = null;
     public int actorHealth;
-    public String actorClass;
+    public String ActorId;
     
+    private String actorClass;
+     
+
     public int[] assignAttributes(int [] rolledAttributes)
     {
         return rolledAttributes; 
@@ -18,9 +21,13 @@ public class ClassStrategy
     {
 
     }
-    public int getProficiency()
+    public String getClassName()
     {
-        return 0;
+        return this.actorClass;
+    }
+    public int getProficiency(int attributeSelect)
+    {
+        return ((this.actorAbilities[attributeSelect] - 10) / 2);
     }
     // public int[] assignSkills();
     // public int[] assignSaves();

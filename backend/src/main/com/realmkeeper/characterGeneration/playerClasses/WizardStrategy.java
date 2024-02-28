@@ -30,13 +30,12 @@ public class WizardStrategy extends ClassStrategy
         System.out.println("Health: " + health);
     }
     @Override
-    public void debugActor() {
-        throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
+    public String getClassName()
+    {
+        return this.actorClass;
     }
     @Override
-    public int getProficiency() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getProficiency'");
-    }
-    
+    public void debugActor() {
+        throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
+    } 
 }
