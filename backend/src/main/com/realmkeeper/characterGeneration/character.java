@@ -117,23 +117,32 @@ public class character extends actorBuilder
           System.out.println("[PLACEHOLDER] ActorId must end with 'R' for random actor generation. This branch is for deliberate actor generation.");
       }
      }
-     private void setCharacterAttributes() 
-     {
+    private void setCharacterAttributes() 
+    {
         System.out.println("GENERATING NEW RANDOM ACTOR_ID: " + this.classId);
         actorAbilities = assignActorClass(actorAbilities, this.classId, 1); // Random level 1 class
+        
+        // Ensure actor abilities are not below 8
+        for (int i = 0; i < actorAbilities.length; i++) 
+        {
+            if (actorAbilities[i] < 8) 
+            {
+                actorAbilities[i] = 8;
+            }
+        }
         actorStr = actorAbilities[0];
         actorDex = actorAbilities[1];
         actorCon = actorAbilities[2];
         actorInt = actorAbilities[3];
         actorWis = actorAbilities[4];
         actorCha = actorAbilities[5];
-        actorHealth =  actorClassStrategy.assignHealth();
-     }
+        actorHealth = actorClassStrategy.assignHealth();
+    }
     public void debugActor()
     {
         System.out.println("DEBUG LOG FOR ActorId:" + this.ActorId); //OK
         System.out.println("Actor Attributes:");
-        System.out.println("Class: " + actorClass);
+        System.out.println("Class: " + this.actorClass);
         System.out.println("Health: " + this.actorHealth);
         System.out.println("Strength: " + this.actorStr);
         System.out.println("Dexterity: " + this.actorDex);
@@ -143,16 +152,6 @@ public class character extends actorBuilder
         System.out.println("Charisma: " + this.actorCha);
 
     }
-
-
-    // private void setActorClass(String actorClass) 
-    // {
-    //     ActorClass = actorClass;
-    // }
-    // private void getActorClass() 
-    // {
-    //     System.out.println(ActorClass);
-    // }
     // private void showActorSimple()
     // {
     //     //print all actor attributes

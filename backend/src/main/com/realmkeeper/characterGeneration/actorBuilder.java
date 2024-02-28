@@ -4,7 +4,7 @@ import com.realmkeeper.utils.CharacterMath;
 
 public class actorBuilder
 {
-    public ClassStrategy actorClassStrategy;
+    protected ClassStrategy actorClassStrategy;
     public String actorClass;
     private CharacterMath characterMath = new CharacterMath();
     
@@ -88,13 +88,6 @@ public class actorBuilder
                 System.out.println("Invalid Class ID");
                 break;
         }
-        
         return attributes;
-    }
-    protected int getActorHealth()
-    {
-        this.actorClassStrategy.assignHealth();
-        return actorClassStrategy.actorHealth;
-    }
-    
+    }    
 }
