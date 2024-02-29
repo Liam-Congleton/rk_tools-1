@@ -107,6 +107,7 @@ public class character extends actorBuilder
         this.raceID = 1;
         
         setAttributes();
+
         setHealth(); // Assign health
         setAlignment(); // Assign alignment
         setEquipment(); // Assign equipment
@@ -144,7 +145,8 @@ public class character extends actorBuilder
     }
     private void setRace(int raceID)
     {
-
+        assignActorRace(actorAbilities, raceID);
+        
     }
     private void setAlignment()
     {

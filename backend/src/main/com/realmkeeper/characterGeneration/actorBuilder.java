@@ -8,6 +8,7 @@ public class actorBuilder
     protected ClassStrategy actorClassStrategy;
     protected RaceStrategy actorRaceStrategy;
     public String actorClassName;
+    public String actorRaceName;
     private CharacterMath characterMath = new CharacterMath();
     
     protected int[] assignActorClass(int[] attributes, int classId, int actorLevel) //Default to Barbarian lvl 1
@@ -20,9 +21,10 @@ public class actorBuilder
     }
     protected int[] assignActorRace(int[] attributes, int raceId) 
     {
-        RaceStrategy actorRace = actorRaceStrategy.getRaceStrategy(raceId);
-        this.actorRaceStrategy = actorRace;
-        attributes = actorRaceStrategy.adjustAttributesForRace(attributes);
-        return attributes;
+        RaceStrategy actorRace = actorRaceStrategy.getRaceStrategy(raceId); // Get the race strategy
+        this.actorRaceStrategy = actorRace; // Typecast to RaceStrategy
+        this.actorRaceName = actorRace.getRaceName(); // Return Racename
+        attributes = actorRaceStrategy.adjustAttributesForRace(attributes); // Adjust attributes
+        return attributes; // Return the adjusted attributes
     }
 }
