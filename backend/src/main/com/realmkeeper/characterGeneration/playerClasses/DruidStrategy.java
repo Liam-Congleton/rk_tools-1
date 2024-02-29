@@ -13,7 +13,7 @@ public class DruidStrategy extends ClassStrategy
     {
         return new double[] 
         {
-            0.3, // LAWFUL_GOOD 
+            0.1, // LAWFUL_GOOD 
             0.45, // NEUTRAL_GOOD
             0.55, // CHAOTIC_GOOD
             0.65, // LAWFUL_NEUTRAL
@@ -48,6 +48,7 @@ public class DruidStrategy extends ClassStrategy
     {
         return this.actorClass;
     }
+<<<<<<< HEAD
     @Override
     public HashMap<String, String> assignEquipment()
     {
@@ -62,4 +63,6 @@ public class DruidStrategy extends ClassStrategy
         equipment.put("Special", "None");
         return equipment;
     }
+=======
+>>>>>>> 6cfaaaa697e1b964bbcc2f898ba8215810870f0b
 }

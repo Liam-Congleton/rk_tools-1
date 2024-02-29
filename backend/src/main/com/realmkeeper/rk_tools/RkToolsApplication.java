@@ -13,7 +13,7 @@ public class RkToolsApplication
 
 	public static void main(String[] args) 
 	{
-//		SpringApplication.run(RkToolsApplication.class, args);
+		//SpringApplication.run(RkToolsApplication.class, args);
 		  // Start time
 		  printASCIIDragonLogo();
 		  long startTime = System.nanoTime();

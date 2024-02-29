@@ -16,10 +16,6 @@ public class ClassStrategy
     {
         return rolledAttributes; 
     }
-    public void debugActor()
-    {
-
-    }
     public int assignHealth()
     {
         int hitDie = -1000000; // Placeholder
@@ -35,8 +31,7 @@ public class ClassStrategy
         this.actorAbilities = attributes;
         return ((this.actorAbilities[attributeSelect] - 10) / 2);
     }
-
-    enum Alignment  // Enum for character alignments
+    public enum Alignment  // Enum for character alignments
     {
         LAWFUL_GOOD, NEUTRAL_GOOD, CHAOTIC_GOOD,
         LAWFUL_NEUTRAL, TRUE_NEUTRAL, CHAOTIC_NEUTRAL,
@@ -70,6 +65,7 @@ public class ClassStrategy
     }
     public String assignAlignment()  // Assign a random alignment to the character  
     {
+<<<<<<< HEAD
         Alignment randomWeightedAlignment = getRandomWeightedAlignment();
         return randomWeightedAlignment.toString();
     }
@@ -86,13 +82,29 @@ public class ClassStrategy
         equipment.put("Special", "Pig Offal");
         return equipment;
         //throw new UnsupportedOperationException("Unimplemented method 'assignEquipment'");
+=======
+        Alignment randomWeightedAlignment = getRandomWeightedAlignment(); // Random weights overidden by subclass
+        System.out.println("The character's alignment is: " + randomWeightedAlignment);
+>>>>>>> 6cfaaaa697e1b964bbcc2f898ba8215810870f0b
+    }
+    public HashMap<String, String> assignEquipment() 
+    {
+        HashMap<String, String> equipment = new HashMap<>();
+        // Add equipment items to the HashMap
+        equipment.put("Weapon", "Sword");
+        equipment.put("Armor", "Shield");
+        equipment.put("Accessory", "Ring");
+        return equipment;
+    }
+    public void debugActor()
+    {
+
     }
 }
 
     // public int[] assignSkills();
     // public int[] assignSaves();
     // public int[] assignProficiencies();
-    // public int[] assignEquipment();
     // public int[] assignSpells();
     // public int[] assignFeats();
     // public int[] assignTraits();

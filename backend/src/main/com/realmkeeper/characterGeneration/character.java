@@ -7,6 +7,8 @@ public class character extends actorBuilder
 {
     private String ActorId;
     private int classId;
+    private int actorHealth;
+    private String actorAlignment;
     protected int[] actorAbilities = new int[6]; // Array to store actor abilities
     protected int actorStr = actorAbilities[0];
     protected int actorDex = actorAbilities[1];
@@ -14,9 +16,12 @@ public class character extends actorBuilder
     protected int actorInt = actorAbilities[3];
     protected int actorWis = actorAbilities[4];
     protected int actorCha = actorAbilities[5];
+<<<<<<< HEAD
     private int actorHealth;
     private String actorAlignment;
     private HashMap <String, String> actorEquipment = new HashMap<String, String>();
+=======
+>>>>>>> 6cfaaaa697e1b964bbcc2f898ba8215810870f0b
     // private String ActorName;
     // private String ActorRace;
     // private int ActorLevel;
@@ -28,7 +33,6 @@ public class character extends actorBuilder
     // public int ActorHitDie;
     // public int ActorProficiency;
     // public int ActorInspiration;
-    // public int ActorAlignment;
     // public int ActorBackground;
     // public int ActorLanguages;
     // public int ActorEquipment;
@@ -140,6 +144,7 @@ public class character extends actorBuilder
         actorInt = actorAbilities[3];
         actorWis = actorAbilities[4];
         actorCha = actorAbilities[5];
+<<<<<<< HEAD
     }
     private void setAlignment()
     {
@@ -153,11 +158,19 @@ public class character extends actorBuilder
     {
         actorEquipment = actorClassStrategy.assignEquipment();
 
+=======
+        actorHealth = actorClassStrategy.assignHealth(); // Assign health
+        setCharacterAlignment(); // Assign alignment
+    }
+    private void setCharacterAlignment()
+    {
+        actorAlignment = getAlignment();
+>>>>>>> 6cfaaaa697e1b964bbcc2f898ba8215810870f0b
     }
     public void debugActor()
     {
         System.out.println("DEBUG LOG FOR ActorId:" + this.ActorId); //OK
-        System.out.println("Actor Attributes:"); //OK
+        System.out.println("Actor Attributes:");
         System.out.println("Class: " + this.actorClassName); //OK
         System.out.println("Health: " + this.actorHealth); //OK
         System.out.println("Strength: " + this.actorStr); //OK
@@ -167,6 +180,10 @@ public class character extends actorBuilder
         System.out.println("Wisdom: " + this.actorWis); //OK
         System.out.println("Charisma: " + this.actorCha); //OK
         System.out.println("Alignment: " + this.actorAlignment); //OK
+<<<<<<< HEAD
         System.out.println("Equipment: " + this.actorEquipment); //OK
+=======
+
+>>>>>>> 6cfaaaa697e1b964bbcc2f898ba8215810870f0b
     }
 }
