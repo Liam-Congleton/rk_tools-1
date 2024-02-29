@@ -1,13 +1,13 @@
-package com.realmkeeper.characterGeneration.playerClasses;
+package com.realmkeeper.characterGeneration.actorClasses;
 
 import java.util.HashMap;
 
-public class MonkStrategy extends ClassStrategy
+public class FighterStrategy extends ClassStrategy
 {
 
     public int[] actorAbilities = new int[6]; // Array to store actor abilities
     public int actorHealth; // Variable to store actor health
-    public String actorClass = "Monk"; // Variable to store actor class
+    public String actorClass = "Fighter"; // Variable to store actor class
     @Override
     protected double[] getCumulativeProbabilities() // TODO - update weights
     {
@@ -28,20 +28,14 @@ public class MonkStrategy extends ClassStrategy
     @Override
     public int [] assignAttributes(int [] rolledAttributes) 
     {
-        actorAbilities[0] = rolledAttributes[0]; // Strength
-        actorAbilities[1] = rolledAttributes[5]; // Dexterity
-        actorAbilities[2] = rolledAttributes[3]; // Constitution
-        actorAbilities[3] = rolledAttributes[4]; // Wisdom
-        actorAbilities[4] = rolledAttributes[2]; // Intelligence
-        actorAbilities[5] = rolledAttributes[1]; // Charisma
+        actorAbilities[0] = rolledAttributes[5]; // Strength
+        actorAbilities[1] = rolledAttributes[3]; // Dexterity
+        actorAbilities[2] = rolledAttributes[4]; // Constitution
+        actorAbilities[3] = rolledAttributes[2]; // Wisdom
+        actorAbilities[4] = rolledAttributes[1]; // Intelligence
+        actorAbilities[5] = rolledAttributes[0]; // Charisma
         
         return actorAbilities; // Assign the rolled attributes to the actor
-    }
-    @Override
-    public int assignHealth()
-    {
-        int hitDie = 8;
-        return this.actorHealth = (hitDie + getProficiency(2, this.actorAbilities));
     }
     @Override
     public String getClassName()
@@ -49,11 +43,17 @@ public class MonkStrategy extends ClassStrategy
         return this.actorClass;
     }
     @Override
+    public int assignHealth()
+    {
+        int hitDie = 12;
+        return this.actorHealth = (hitDie + getProficiency(2, this.actorAbilities));
+    }
+    @Override
     public HashMap<String, String> assignEquipment()
     {
-        equipment.put("Armor", "None");
-        equipment.put("Weapon", "Quarterstaff");
-        equipment.put("Shield", "None");
+        equipment.put("Armor", "Chain Mail");
+        equipment.put("Weapon", "Longsword");
+        equipment.put("Shield", "Wodden Shield");
         equipment.put("Gear", "Dungeoneer's Pack");
         equipment.put("Tools", "None");
         equipment.put("Treasure", "15 Gold Pieces");

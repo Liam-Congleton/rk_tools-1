@@ -5,8 +5,9 @@ import com.realmkeeper.utils.DiceSet;
 
 public class character extends actorBuilder
 {
-    private String ActorId;
-    private int classId;
+    private String ActorID;
+    private int classID;
+    private int raceID;
     private HashMap<String, String> actorEquipment = new HashMap<>();
     private int actorHealth;
     private String actorAlignment;
@@ -85,35 +86,37 @@ public class character extends actorBuilder
     // public int ActorSpellDamage;
     // public int ActorSpellHealing;
 
-    public character(String actorId)
+    public character(String actorID)
     {
         DiceSet dice = new DiceSet();
 
-     if(actorId == null)
+     if(actorID == null)
      {
         System.out.println("ActorId cannot be null");
         System.exit(0);
      }
-     else if(actorId == "")
+     else if(actorID == "")
      {
         System.out.println("ActorId cannot be empty");
         System.exit(0);
      }
-     else if (actorId.charAt(actorId.length() - 1) == 'R') // ++ Random Actor Generation ++
+     else if (actorID.charAt(actorID.length() - 1) == 'R') // ++ Random Actor Generation ++
       {
         //this.classId = 1; // Default to Barbarian temporarily
-        this.classId = dice.rollD12();  
-        setCharacterAttributes();
+        classID = dice.rollD12(); //ID LOGIC BEGIN - Random classID
+        this.raceID = 1;
+        
+        setAttributes();
         setHealth(); // Assign health
         setAlignment(); // Assign alignment
         setEquipment(); // Assign equipment
-                if(this.classId < 10)  
+                if(this.classID < 10)  
                 {
-                    this.ActorId = actorId + "0" + classId + "c";    
+                    this.ActorID = actorID + "0" + classID + "c";    
                 }
                 else
                      {
-                    this.ActorId = actorId + classId + "c";
+                    this.ActorID = actorID + classID + "c";
                 }
       } 
       else
@@ -121,10 +124,9 @@ public class character extends actorBuilder
           System.out.println("[PLACEHOLDER] ActorId must end with 'R' for random actor generation. This branch is for deliberate actor generation.");
       }
      }
-    private void setCharacterAttributes() 
+    private void setAttributes() 
     {
-        //System.out.println("GENERATING NEW RANDOM ACTOR_ID: " + this.classId);  // Debugging
-        actorAbilities = assignActorClass(actorAbilities, this.classId, 1); // Random level 1 class
+        actorAbilities = assignActorClass(actorAbilities, this.classID, 1); // Random level 1 class
 
         for (int i = 0; i < actorAbilities.length; i++)  // Ensure no ability is below 8
         {
@@ -139,6 +141,10 @@ public class character extends actorBuilder
         actorInt = actorAbilities[3];
         actorWis = actorAbilities[4];
         actorCha = actorAbilities[5];
+    }
+    private void setRace(int raceID)
+    {
+
     }
     private void setAlignment()
     {
@@ -155,7 +161,7 @@ public class character extends actorBuilder
     }
     public void debugActor()
     {
-        System.out.println("DEBUG LOG FOR ActorId:" + this.ActorId); //OK
+        System.out.println("DEBUG LOG FOR ActorId:" + this.ActorID); //OK
         System.out.println("Actor Attributes:");
         System.out.println("Class: " + this.actorClassName); //OK
         System.out.println("Health: " + this.actorHealth); //OK

@@ -1,4 +1,4 @@
-package com.realmkeeper.characterGeneration.playerClasses;
+package com.realmkeeper.characterGeneration.actorClasses;
 
 public class ClassStrategyFactory 
 {

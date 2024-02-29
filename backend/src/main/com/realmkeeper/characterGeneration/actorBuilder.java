@@ -1,10 +1,12 @@
 package com.realmkeeper.characterGeneration;
-import com.realmkeeper.characterGeneration.playerClasses.*;
+import com.realmkeeper.characterGeneration.actorClasses.*;
+import com.realmkeeper.characterGeneration.actorRaces.RaceStrategy;
 import com.realmkeeper.utils.CharacterMath;
 
 public class actorBuilder
 {
     protected ClassStrategy actorClassStrategy;
+    protected RaceStrategy actorRaceStrategy;
     public String actorClassName;
     private CharacterMath characterMath = new CharacterMath();
     
@@ -16,14 +18,11 @@ public class actorBuilder
         actorClass.actorAbilities = actorClassStrategy.assignAttributes(characterMath.rollAttributes(6)); // Assign attributes
         return actorClass.actorAbilities;
     }
-    protected String getAlignment()
+    protected int[] assignActorRace(int[] attributes, int raceId) 
     {
-        System.out.println("Assigning Alignment");
-        String alignmentString = this.actorClassStrategy.getRandomWeightedAlignment().toString();
-        return alignmentString; 
-    }
-    protected void getEquipment()
-    {
-        this.actorClassStrategy.assignEquipment();
+        RaceStrategy actorRace = actorRaceStrategy.getRaceStrategy(raceId);
+        this.actorRaceStrategy = actorRace;
+        attributes = actorRaceStrategy.adjustAttributesForRace(attributes);
+        return attributes;
     }
 }

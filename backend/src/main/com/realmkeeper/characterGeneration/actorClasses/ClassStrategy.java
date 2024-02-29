@@ -1,4 +1,4 @@
-package com.realmkeeper.characterGeneration.playerClasses;
+package com.realmkeeper.characterGeneration.actorClasses;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -81,6 +81,8 @@ public class ClassStrategy
         equipment.put("Special", "Pig Offal");
         return equipment;
     }
+    
+    
     public void debugActor()
     {
 

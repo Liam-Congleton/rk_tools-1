@@ -1,13 +1,13 @@
-package com.realmkeeper.characterGeneration.playerClasses;
+package com.realmkeeper.characterGeneration.actorClasses;
 
 import java.util.HashMap;
 
-public class WizardStrategy extends ClassStrategy
+public class SorcererStrategy extends ClassStrategy
 {
 
     public int[] actorAbilities = new int[6]; // Array to store actor abilities
     public int actorHealth; // Variable to store actor health
-    public String actorClass = "Wizard"; // Variable to store actor class
+    public String actorClass = "Sorcerer"; // Variable to store actor class
     @Override
     protected double[] getCumulativeProbabilities() // TODO - update weights
     {
@@ -24,6 +24,7 @@ public class WizardStrategy extends ClassStrategy
             1.00  // CHAOTIC_EVIL
         };
     }    
+    
     @Override
     public int [] assignAttributes(int [] rolledAttributes) 
     {
@@ -37,15 +38,15 @@ public class WizardStrategy extends ClassStrategy
         return actorAbilities; // Assign the rolled attributes to the actor
     }
     @Override
+    public String getClassName()
+    {
+        return this.actorClass;
+    }
+    @Override
     public int assignHealth()
     {
         int hitDie = 6;
         return this.actorHealth = (hitDie + getProficiency(2, this.actorAbilities));
-    }
-    @Override
-    public String getClassName()
-    {
-        return this.actorClass;
     }
     @Override
     public HashMap<String, String> assignEquipment()
@@ -60,6 +61,5 @@ public class WizardStrategy extends ClassStrategy
         equipment.put("Notes", "None");
         equipment.put("Special", "None");
         return equipment;
-    } 
-    
+    }
 }
