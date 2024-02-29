@@ -1,5 +1,7 @@
 package com.realmkeeper.characterGeneration.playerClasses;
 
+import java.util.HashMap;
+
 public class RogueStrategy extends ClassStrategy
 {
 
@@ -47,7 +49,17 @@ public class RogueStrategy extends ClassStrategy
         return this.actorHealth = (hitDie + getProficiency(2, this.actorAbilities));
     }
     @Override
-    public void debugActor() {
-        throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
+    public HashMap<String, String> assignEquipment()
+    {
+        equipment.put("Armor", "Leather");
+        equipment.put("Weapon", "Dagger");
+        equipment.put("Shield", "None");
+        equipment.put("Gear", "Burglar's Pack");
+        equipment.put("Tools", "Thieves' Tools");
+        equipment.put("Treasure", "15 Gold Pieces");
+        equipment.put("Currency", "15 Gold Pieces");
+        equipment.put("Notes", "None");
+        equipment.put("Special", "None");
+        return equipment;
     }
 }

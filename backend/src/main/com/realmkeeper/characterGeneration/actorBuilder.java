@@ -16,8 +16,4 @@ public class actorBuilder
         actorClass.actorAbilities = actorClassStrategy.assignAttributes(characterMath.rollAttributes(6)); // Assign attributes
         return actorClass.actorAbilities;
     }
-    public void getAlignment()
-    {
-        actorClassStrategy.assignAlignment();
-    }
 }

@@ -1,5 +1,7 @@
 package com.realmkeeper.characterGeneration.playerClasses;
 
+import java.util.HashMap;
+
 public class PaladinStrategy extends ClassStrategy
 {
 
@@ -45,8 +47,17 @@ public class PaladinStrategy extends ClassStrategy
         return this.actorHealth = (hitDie + getProficiency(2, this.actorAbilities));
     }
     @Override
-    public void debugActor() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
+    public HashMap<String, String> assignEquipment()
+    {
+        equipment.put("Armor", "Chain Mail");
+        equipment.put("Weapon", "Longsword");
+        equipment.put("Shield", "Wooden Shield");
+        equipment.put("Gear", "Priest's Pack");
+        equipment.put("Tools", "None");
+        equipment.put("Treasure", "15 Gold Pieces");
+        equipment.put("Currency", "15 Gold Pieces");
+        equipment.put("Notes", "None");
+        equipment.put("Special", "None");
+        return equipment;
     }
 }

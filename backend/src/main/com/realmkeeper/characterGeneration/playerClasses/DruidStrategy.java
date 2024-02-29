@@ -1,5 +1,7 @@
 package com.realmkeeper.characterGeneration.playerClasses;
 
+import java.util.HashMap;
+
 public class DruidStrategy extends ClassStrategy
 {
 
@@ -47,8 +49,17 @@ public class DruidStrategy extends ClassStrategy
         return this.actorClass;
     }
     @Override
-    public void debugActor() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
+    public HashMap<String, String> assignEquipment()
+    {
+        equipment.put("Armor", "Leather");
+        equipment.put("Weapon", "Scimitar");
+        equipment.put("Shield", "Wooden Shield");
+        equipment.put("Gear", "Explorer's Pack");
+        equipment.put("Tools", "Druidic Focus");
+        equipment.put("Treasure", "10 Gold Pieces");
+        equipment.put("Currency", "10 Gold Pieces");
+        equipment.put("Notes", "None");
+        equipment.put("Special", "None");
+        return equipment;
     }
 }

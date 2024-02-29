@@ -1,4 +1,5 @@
 package com.realmkeeper.characterGeneration.playerClasses;
+import java.util.HashMap;
 import java.util.Random;
 
 public class ClassStrategy 
@@ -9,6 +10,7 @@ public class ClassStrategy
     private String actorClass;
     private static final Random RANDOM = new Random(); // Cache the random number generator
     private static final Alignment[] ALIGNMENTS = Alignment.values(); // Cache the values array
+    HashMap<String, String> equipment = new HashMap<String, String>();
 
     public int[] assignAttributes(int [] rolledAttributes)
     {
@@ -66,10 +68,24 @@ public class ClassStrategy
 
         return ALIGNMENTS[ALIGNMENTS.length - 1]; // Fallback, should not happen
     }
-    public void assignAlignment()  // Assign a random alignment to the character  
+    public String assignAlignment()  // Assign a random alignment to the character  
     {
         Alignment randomWeightedAlignment = getRandomWeightedAlignment();
-        System.out.println("The character's alignment is: " + randomWeightedAlignment);
+        return randomWeightedAlignment.toString();
+    }
+    public HashMap<String, String> assignEquipment() 
+    {
+        equipment.put("Armor", "Cloth Sack");
+        equipment.put("Weapon", "Stick");
+        equipment.put("Shield", "None");
+        equipment.put("Gear", "Backpack");
+        equipment.put("Tools", "Pitchfork");
+        equipment.put("Treasure", "10 Copper Pieces");
+        equipment.put("Currency", "10 Copper Pieces");
+        equipment.put("Notes", "None");
+        equipment.put("Special", "Pig Offal");
+        return equipment;
+        //throw new UnsupportedOperationException("Unimplemented method 'assignEquipment'");
     }
 }
 

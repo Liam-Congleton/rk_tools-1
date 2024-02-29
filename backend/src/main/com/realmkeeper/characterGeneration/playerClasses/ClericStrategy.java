@@ -1,5 +1,7 @@
 package com.realmkeeper.characterGeneration.playerClasses;
 
+import java.util.HashMap;
+
 public class ClericStrategy extends ClassStrategy
 {
 
@@ -47,8 +49,17 @@ public class ClericStrategy extends ClassStrategy
         return this.actorClass;
     }
     @Override
-    public void debugActor() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
+    public HashMap<String, String> assignEquipment()
+    {
+        equipment.put("Armor", "Chain Mail");
+        equipment.put("Weapon", "Wooden Shield");
+        equipment.put("Shield", "None");
+        equipment.put("Gear", "Priest's Pack");
+        equipment.put("Tools", "None");
+        equipment.put("Treasure", "15 Gold Pieces");
+        equipment.put("Currency", "15 Gold Pieces");
+        equipment.put("Notes", "None");
+        equipment.put("Special", "None");
+        return equipment;
     }
 }

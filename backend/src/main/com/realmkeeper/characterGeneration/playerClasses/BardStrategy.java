@@ -1,5 +1,7 @@
 package com.realmkeeper.characterGeneration.playerClasses;
 
+import java.util.HashMap;
+
 public class BardStrategy extends ClassStrategy
 {
 
@@ -45,5 +47,19 @@ public class BardStrategy extends ClassStrategy
     {
         int hitDie = 8;
         return this.actorHealth = (hitDie + getProficiency(2, this.actorAbilities));
+    }
+    @Override
+    public HashMap<String, String> assignEquipment()
+    {
+        equipment.put("Armor", "Leather");
+        equipment.put("Weapon", "Dagger");
+        equipment.put("Shield", "None");
+        equipment.put("Gear", "Entertainer's Pack");
+        equipment.put("Tools", "Lute");
+        equipment.put("Treasure", "15 Gold Pieces");
+        equipment.put("Currency", "15 Gold Pieces");
+        equipment.put("Notes", "None");
+        equipment.put("Special", "None");
+        return equipment;
     }
 }

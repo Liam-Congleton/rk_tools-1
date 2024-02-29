@@ -1,5 +1,7 @@
 package com.realmkeeper.characterGeneration.playerClasses;
 
+import java.util.HashMap;
+
 public class BarbarianStrategy extends ClassStrategy
  {
     public int[] actorAbilities = new int[6]; // Array to store actor abilities
@@ -45,7 +47,20 @@ public class BarbarianStrategy extends ClassStrategy
         int hitDie = 12;
         return this.actorHealth = (hitDie + getProficiency(2, this.actorAbilities));
     }
-    
+    @Override
+    public HashMap<String, String> assignEquipment()
+    {
+        equipment.put("Armor", "Leather");
+        equipment.put("Weapon", "Greataxe");
+        equipment.put("Shield", "None");
+        equipment.put("Gear", "Explorer's Pack");
+        equipment.put("Tools", "None");        
+        equipment.put("Treasure", "10 Gold Pieces");
+        equipment.put("Currency", "10 Gold Pieces");
+        equipment.put("Notes", "None");
+        equipment.put("Special", "None");
+        return equipment;
+    }
     // @Override
     // public int[] assignSkills() {
     //     throw new UnsupportedOperationException("Unimplemented method 'assignSkills'");

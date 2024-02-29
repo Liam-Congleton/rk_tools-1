@@ -1,5 +1,7 @@
 package com.realmkeeper.characterGeneration.playerClasses;
 
+import java.util.HashMap;
+
 public class WarlockStrategy extends ClassStrategy
 {
 
@@ -48,9 +50,17 @@ public class WarlockStrategy extends ClassStrategy
     }
 
     @Override
-    public void debugActor() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'debugActor'");
+    public HashMap<String, String> assignEquipment()
+    {
+        equipment.put("Armor", "Robes");
+        equipment.put("Weapon", "Dagger");
+        equipment.put("Shield", "None");
+        equipment.put("Gear", "Dungeoneer's Pack");
+        equipment.put("Tools", "None");
+        equipment.put("Treasure", "15 Gold Pieces");
+        equipment.put("Currency", "15 Gold Pieces");
+        equipment.put("Notes", "None");
+        equipment.put("Special", "None");
+        return equipment;
     }
-  
 }

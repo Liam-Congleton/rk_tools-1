@@ -1,4 +1,6 @@
 package com.realmkeeper.characterGeneration;
+import java.util.HashMap;
+
 import com.realmkeeper.utils.DiceSet;
 
 public class character extends actorBuilder
@@ -13,6 +15,8 @@ public class character extends actorBuilder
     protected int actorWis = actorAbilities[4];
     protected int actorCha = actorAbilities[5];
     private int actorHealth;
+    private String actorAlignment;
+    private HashMap <String, String> actorEquipment = new HashMap<String, String>();
     // private String ActorName;
     // private String ActorRace;
     // private int ActorLevel;
@@ -101,7 +105,9 @@ public class character extends actorBuilder
         //this.classId = 1; // Default to Barbarian temporarily
         this.classId = dice.rollD12();  
         setCharacterAttributes();
-
+        setHealth(); // Assign health
+        setAlignment(); // Assign alignment
+        setEquipment(); // Assign equipment
                 if(this.classId < 10)  
                 {
                     this.ActorId = actorId + "0" + classId + "c";    
@@ -134,7 +140,19 @@ public class character extends actorBuilder
         actorInt = actorAbilities[3];
         actorWis = actorAbilities[4];
         actorCha = actorAbilities[5];
-        actorHealth = actorClassStrategy.assignHealth(); // Assign health
+    }
+    private void setAlignment()
+    {
+        actorAlignment = actorClassStrategy.assignAlignment();
+    }
+    private void setHealth()
+    {
+        actorHealth = actorClassStrategy.assignHealth();
+    }
+    private void setEquipment()
+    {
+        actorEquipment = actorClassStrategy.assignEquipment();
+
     }
     public void debugActor()
     {
@@ -148,7 +166,7 @@ public class character extends actorBuilder
         System.out.println("Intelligence: " + this.actorInt); //OK
         System.out.println("Wisdom: " + this.actorWis); //OK
         System.out.println("Charisma: " + this.actorCha); //OK
-        actorClassStrategy.assignAlignment(); //OK
-
+        System.out.println("Alignment: " + this.actorAlignment); //OK
+        System.out.println("Equipment: " + this.actorEquipment); //OK
     }
 }
