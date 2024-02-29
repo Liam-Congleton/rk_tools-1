@@ -48,13 +48,12 @@ public class ClericStrategy extends ClassStrategy
     {
         return this.actorClass;
     }
-<<<<<<< HEAD
     @Override
     public HashMap<String, String> assignEquipment()
     {
         equipment.put("Armor", "Chain Mail");
-        equipment.put("Weapon", "Wooden Shield");
-        equipment.put("Shield", "None");
+        equipment.put("Weapon", "Iron Mace");
+        equipment.put("Shield", "Wooden Shield");
         equipment.put("Gear", "Priest's Pack");
         equipment.put("Tools", "None");
         equipment.put("Treasure", "15 Gold Pieces");
@@ -63,6 +62,4 @@ public class ClericStrategy extends ClassStrategy
         equipment.put("Special", "None");
         return equipment;
     }
-=======
->>>>>>> 6cfaaaa697e1b964bbcc2f898ba8215810870f0b
 }

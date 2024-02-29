@@ -65,7 +65,6 @@ public class ClassStrategy
     }
     public String assignAlignment()  // Assign a random alignment to the character  
     {
-<<<<<<< HEAD
         Alignment randomWeightedAlignment = getRandomWeightedAlignment();
         return randomWeightedAlignment.toString();
     }
@@ -80,20 +79,6 @@ public class ClassStrategy
         equipment.put("Currency", "10 Copper Pieces");
         equipment.put("Notes", "None");
         equipment.put("Special", "Pig Offal");
-        return equipment;
-        //throw new UnsupportedOperationException("Unimplemented method 'assignEquipment'");
-=======
-        Alignment randomWeightedAlignment = getRandomWeightedAlignment(); // Random weights overidden by subclass
-        System.out.println("The character's alignment is: " + randomWeightedAlignment);
->>>>>>> 6cfaaaa697e1b964bbcc2f898ba8215810870f0b
-    }
-    public HashMap<String, String> assignEquipment() 
-    {
-        HashMap<String, String> equipment = new HashMap<>();
-        // Add equipment items to the HashMap
-        equipment.put("Weapon", "Sword");
-        equipment.put("Armor", "Shield");
-        equipment.put("Accessory", "Ring");
         return equipment;
     }
     public void debugActor()

@@ -48,7 +48,6 @@ public class MonkStrategy extends ClassStrategy
     {
         return this.actorClass;
     }
-<<<<<<< HEAD
     @Override
     public HashMap<String, String> assignEquipment()
     {
@@ -63,6 +62,4 @@ public class MonkStrategy extends ClassStrategy
         equipment.put("Special", "None");
         return equipment;
     }
-=======
->>>>>>> 6cfaaaa697e1b964bbcc2f898ba8215810870f0b
 }
