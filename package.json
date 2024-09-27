@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Leeumz/rk_tools/issues"
   },
-  "homepage": "https://github.com/Leeumz/rk_tools#readme"
+  "homepage": "https://github.com/Leeumz/rk_tools#readme",
+  "dependencies": {
+    "rk_tools": "file:"
+  }
 }
