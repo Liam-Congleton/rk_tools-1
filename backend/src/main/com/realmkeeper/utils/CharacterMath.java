@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class CharacterMath extends DiceSet
 {
-    public int[] rollAttributes(int amount)
+    public int[] rollAttributes(int amount) //Generate the attributes for the character
     {
         int[] rolls = new int[4]; // Array to store the 4 rolls
         int[] attributesVal = new int[amount]; // Array to store the sum of the highest 3 rolls
